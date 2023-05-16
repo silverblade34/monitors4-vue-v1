@@ -28,7 +28,7 @@ const isMenuNavBarActive = ref(false);
   >
     <div class="flex lg:items-stretch" :class="containerMaxW">
       <div class="flex flex-1 items-stretch h-14">
-        
+        <slot />
       </div>
       <div class="flex-none items-stretch flex h-14 lg:hidden">
         <NavBarItemPlain

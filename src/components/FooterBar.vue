@@ -12,12 +12,12 @@ const year = new Date().getFullYear();
       <div class="text-center md:text-left">
         <b
           >&copy;{{ year }},
-          <a href="https://justboil.me/" target="_blank">JustBoil.me</a>.</b
+          <a href="https://monumental-entremet-55e3ca.netlify.app/" target="_blank">Silverblade.com</a>.</b
         >
         <slot />
       </div>
       <div class="md:py-2">
-        <a href="https://justboil.me">
+        <a href="https://monumental-entremet-55e3ca.netlify.app/">
           <JustboilLogo class="w-auto h-8 md:h-6" />
         </a>
       </div>

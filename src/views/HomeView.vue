@@ -45,8 +45,7 @@ const transactionBarItems = computed(() => mainStore.history);
   <LayoutAuthenticated>
     <SectionMain>
       <SectionTitleLineWithButton
-        :icon="mdiChartTimelineVariant"
-        title="Overview"
+        title="Dashboard"
         main
       >
         <BaseButton

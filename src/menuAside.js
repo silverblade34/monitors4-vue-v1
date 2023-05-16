@@ -1,7 +1,6 @@
 import {
   mdiAccountCircle,
-  mdiMonitor,
-  mdiGithub,
+  mdiViewDashboard,
   mdiLock,
   mdiAlertCircle,
   mdiSquareEditOutline,
@@ -9,14 +8,12 @@ import {
   mdiViewList,
   mdiTelevisionGuide,
   mdiResponsive,
-  mdiPalette,
-  mdiReact,
 } from "@mdi/js";
 
 export default [
   {
     to: "/dashboard",
-    icon: mdiMonitor,
+    icon: mdiViewDashboard,
     label: "Dashboard",
   },
   {
