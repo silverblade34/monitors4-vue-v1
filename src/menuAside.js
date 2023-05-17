@@ -2,6 +2,7 @@ import {
   mdiAccountCircle,
   mdiViewDashboard,
   mdiLock,
+  mdiMonitorDashboard,
   mdiAlertCircle,
   mdiSquareEditOutline,
   mdiTable,
@@ -18,8 +19,8 @@ export default [
   },
   {
     to: "/tables",
-    label: "Tables",
-    icon: mdiTable,
+    label: "Rutinas",
+    icon: mdiMonitorDashboard,
   },
   {
     to: "/forms",

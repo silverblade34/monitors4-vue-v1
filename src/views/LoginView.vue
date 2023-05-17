@@ -10,49 +10,44 @@ import FormControl from "@/components/FormControl.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseButtons from "@/components/BaseButtons.vue";
 import LayoutGuest from "@/layouts/LayoutGuest.vue";
+import NotificationBar from "@/components/NotificationBar.vue";
 
 const form = reactive({
   login: "john.doe",
   pass: "highly-secure-password-fYjUw-",
   remember: true,
 });
-
+const errorMessage = reactive({value: ""});
 const router = useRouter();
 
 const submit = () => {
-  router.push("/dashboard");
-};
+  // Simulación de validación de credenciales
+  if (form.login === "john.doe" && form.pass === "highly-secure-password-fYjUw-") {
+    // Credenciales correctas, redirigir al dashboard
+    router.push("/dashboard");
+  } else {
+    console.log("----------------------1")
+    // Credenciales incorrectas, mostrar mensaje de error o realizar otra acción
+    errorMessage.value = "Credenciales incorrectas";
+  }
+}; 
 </script>
 
 <template>
   <LayoutGuest>
     <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
       <CardBox :class="cardClass" is-form @submit.prevent="submit">
+        <NotificationBar v-if="errorMessage.value"  :is-dismissed="isDismissed.value">{{ errorMessage.value }}</NotificationBar>
         <FormField label="Login" help="Please enter your login">
-          <FormControl
-            v-model="form.login"
-            :icon="mdiAccount"
-            name="login"
-            autocomplete="username"
-          />
+          <FormControl v-model="form.login" :icon="mdiAccount" name="login" autocomplete="username" />
         </FormField>
 
         <FormField label="Password" help="Please enter your password">
-          <FormControl
-            v-model="form.pass"
-            :icon="mdiAsterisk"
-            type="password"
-            name="password"
-            autocomplete="current-password"
-          />
+          <FormControl v-model="form.pass" :icon="mdiAsterisk" type="password" name="password"
+            autocomplete="current-password" />
         </FormField>
 
-        <FormCheckRadio
-          v-model="form.remember"
-          name="remember"
-          label="Remember"
-          :input-value="true"
-        />
+        <FormCheckRadio v-model="form.remember" name="remember" label="Remember" :input-value="true" />
 
         <template #footer>
           <BaseButtons>
